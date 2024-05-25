@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Faça sua reserva</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Faça sua reserva</h1>
+<form id="reservation-form" action="/submit_reservation_form" method="post">
+
+
+    <label for="reservationDate">Dia da Reserva:</label>
+    <input type="date" id="reservationDate" name="reservationDate" required>
+
+
+    <label for="activity">Selecione um horário:</label>
+    <select id="activity" name="activity" required>
+        <option value="">Selecione</option>
+        <option value="11:40">11:40</option>
+        <option value="19:40">19:40</option>
+    </select>
+
+    <label for="people">Selecione o número de pessoas:</label>
+    <select id="people" name="numberOfPeople" required>
+        <option value="">Selecione</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+    </select>
+
+    <input type="hidden" id="id" name="id" value="0">
+
+    <!-- Botão Continuar -->
+    <button type="submit">Continuar</button>
+</form>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

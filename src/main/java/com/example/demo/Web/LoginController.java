@@ -24,12 +24,12 @@ public class LoginController {
         return "login";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/reserva")  // Mudança para a rota /reserva
     public String login(@RequestParam String email, @RequestParam String password, Model model) {
         User user = userService.findByEmail(email);
         if (user != null && user.getPassword().equals(password)) {
             model.addAttribute("user", user);
-            return "hi"; // Redirecionamento para "hi" após o login bem-sucedido
+            return "reserva";  // Redirecionamento para "hi" após o login bem-sucedido
         }
         model.addAttribute("error", "Invalid email or password");
         return "login";
